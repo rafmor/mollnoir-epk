@@ -1,0 +1,6 @@
+18/11/2026|Sala Clamores|Madrid|https://entradas.com/mollnoir-madrid
+25/11/2026|Razzmatazz 3|Barcelona|https://entradas.com/mollnoir-barcelona
+02/12/2026|Kafe Antzokia|Bilbao|https://entradas.com/mollnoir-bilbao
+10/12/2026|Teatro Barceló|Madrid|https://entradas.com/mollnoir-madrid2
+15/12/2026|Sala X|Sevilla|https://entradas.com/mollnoir-sevilla
+22/01/2027|La Riviera|Madrid|https://entradas.com/mollnoir-madrid3
