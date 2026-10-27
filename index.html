@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moll Noir | EPK - Soul & R&B</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        goldHover: '#b5952f',
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        darkPanel: '#111111'
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles for aesthetic refinement */
+        body {
+            background-color: #050505;
+            color: #f5f5f5;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(to right, #D4AF37, #f3e5ab);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .border-gold {
+            border-color: #D4AF37;
+        }
+        
+        /* Custom Audio Player Button Animation */
+        .play-btn:hover svg {
+            fill: #050505;
+        }
+        
+        /* Form Inputs */
+        input, textarea {
+            background-color: transparent;
+            border: 1px solid #333;
+            color: #fff;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="font-montserrat antialiased selection:bg-gold selection:text-black">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-darker/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-playfair text-2xl font-bold tracking-widest text-gold uppercase">Moll Noir</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#banda" class="hover:text-gold transition-colors px-3 py-2 text-sm font-medium tracking-wide uppercase">Banda</a>
+                        <a href="#directo" class="hover:text-gold transition-colors px-3 py-2 text-sm font-medium tracking-wide uppercase">Directo</a>
+                        <a href="#galeria" class="hover:text-gold transition-colors px-3 py-2 text-sm font-medium tracking-wide uppercase">Galería</a>
+                        <a href="#musica" class="hover:text-gold transition-colors px-3 py-2 text-sm font-medium tracking-wide uppercase">Música</a>
+                        <a href="#tour" class="hover:text-gold transition-colors px-3 py-2 text-sm font-medium tracking-wide uppercase">Tour</a>
+                        <a href="#contacto" class="hover:text-gold transition-colors px-3 py-2 text-sm font-medium tracking-wide uppercase">Contacto</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-neutral-800 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-darkPanel border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#banda" class="block hover:text-gold px-3 py-2 text-base font-medium uppercase">Banda</a>
+                <a href="#directo" class="block hover:text-gold px-3 py-2 text-base font-medium uppercase">Directo</a>
+                <a href="#galeria" class="block hover:text-gold px-3 py-2 text-base font-medium uppercase">Galería</a>
+                <a href="#musica" class="block hover:text-gold px-3 py-2 text-base font-medium uppercase">Música</a>
+                <a href="#tour" class="block hover:text-gold px-3 py-2 text-base font-medium uppercase">Tour</a>
+                <a href="#contacto" class="block hover:text-gold px-3 py-2 text-base font-medium uppercase">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Hero background -->
+            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?q=80&w=1920&auto=format&fit=crop" alt="Moll Noir Background" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-darker to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="font-playfair text-6xl md:text-8xl lg:text-9xl font-bold mb-4 text-gold-gradient uppercase tracking-tighter">Moll Noir</h1>
+            <p class="text-xl md:text-3xl font-light tracking-[0.3em] text-neutral-300 uppercase">Soul & R&B</p>
+        </div>
+    </header>
+
+    <!-- Section: Banda -->
+    <section id="banda" class="py-24 bg-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <h2 class="font-playfair text-4xl md:text-5xl text-gold mb-8 italic">La Banda</h2>
+            <p class="text-lg md:text-xl leading-relaxed text-neutral-300 font-light">
+                Moll Noir versiona a clásicos como <span class="text-white font-medium">Etta James</span> o <span class="text-white font-medium">Bill Withers</span>, y a artistas actuales como <span class="text-white font-medium">Rihanna</span> o <span class="text-white font-medium">Christina Aguilera</span>, además de llevar canciones de rock al terreno del más profundo y elegante soul. Una experiencia musical sofisticada.
+            </p>
+        </div>
+
+        <!-- Full width band photo -->
+        <div class="w-full mb-20">
+            <img src="https://images.unsplash.com/photo-1526478806334-5fd488fcaabc?q=80&w=1920&auto=format&fit=crop" alt="Moll Noir Banda" class="w-full h-auto object-cover max-h-[80vh]">
+        </div>
+
+        <!-- Miembros -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="font-playfair text-2xl text-center text-gold mb-12 uppercase tracking-widest">Miembros</h3>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <!-- Izabela -->
+                <div class="text-center group">
+                    <div class="overflow-hidden mb-4 rounded-sm border border-neutral-800 group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1516280440504-45ea0715b50e?q=80&w=400&h=500&auto=format&fit=crop" alt="Izabela - Voz" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h4 class="font-playfair text-xl text-white">Izabela</h4>
+                    <p class="text-sm text-gold mt-1 uppercase tracking-wider text-xs">Voz</p>
+                </div>
+                <!-- Agus -->
+                <div class="text-center group">
+                    <div class="overflow-hidden mb-4 rounded-sm border border-neutral-800 group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1511562283977-9bf4242989c7?q=80&w=400&h=500&auto=format&fit=crop" alt="Agus - Guitarra" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h4 class="font-playfair text-xl text-white">Agus</h4>
+                    <p class="text-sm text-gold mt-1 uppercase tracking-wider text-xs">Guitarra</p>
+                </div>
+                <!-- Leo -->
+                <div class="text-center group">
+                    <div class="overflow-hidden mb-4 rounded-sm border border-neutral-800 group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=400&h=500&auto=format&fit=crop" alt="Leo - Batería" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h4 class="font-playfair text-xl text-white">Leo</h4>
+                    <p class="text-sm text-gold mt-1 uppercase tracking-wider text-xs">Batería</p>
+                </div>
+                <!-- Diego -->
+                <div class="text-center group">
+                    <div class="overflow-hidden mb-4 rounded-sm border border-neutral-800 group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1573871666457-7c7329118cf9?q=80&w=400&h=500&auto=format&fit=crop" alt="Diego - Teclado y Saxo" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h4 class="font-playfair text-xl text-white">Diego</h4>
+                    <p class="text-sm text-gold mt-1 uppercase tracking-wider text-xs">Teclado y Saxo</p>
+                </div>
+                <!-- Rafa -->
+                <div class="text-center group col-span-2 md:col-span-1 md:col-start-5 w-1/2 md:w-full mx-auto">
+                    <div class="overflow-hidden mb-4 rounded-sm border border-neutral-800 group-hover:border-gold transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1461784180009-21121b2f204c?q=80&w=400&h=500&auto=format&fit=crop" alt="Rafa - Bajo" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h4 class="font-playfair text-xl text-white">Rafa</h4>
+                    <p class="text-sm text-gold mt-1 uppercase tracking-wider text-xs">Bajo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Directo (Live) -->
+    <section id="directo" class="bg-darker">
+        <div class="w-full">
+            <div class="aspect-w-16 aspect-h-9 relative" style="padding-bottom: 56.25%;">
+                <!-- Standard YouTube embed placeholder, takes 100% width/height of container -->
+                <iframe class="absolute top-0 left-0 w-full h-full" 
+                        src="https://www.youtube.com/embed/S-cbOl96RFM?autoplay=0&rel=0&modestbranding=1" 
+                        title="Moll Noir en Directo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Galería -->
+    <section id="galeria" class="py-24 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-playfair text-4xl md:text-5xl text-gold mb-16 text-center italic">Galería</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Foto 1 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a1a2a5956093?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+                <!-- Foto 2 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+                <!-- Foto 3 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1415201364774-f6b0bb94b9bb?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+                <!-- Foto 4 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+                <!-- Foto 5 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+                <!-- Foto 6 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1520872024865-3ff2805d8bb3?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 6" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+                <!-- Foto 7 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 7" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+                <!-- Foto 8 -->
+                <div class="flex flex-col">
+                    <div class="overflow-hidden bg-neutral-900 border border-neutral-800 aspect-square">
+                        <img src="https://images.unsplash.com/photo-1485579149621-3123dd979885?q=80&w=600&h=600&auto=format&fit=crop" alt="Galería Moll Noir 8" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 grayscale hover:grayscale-0">
+                    </div>
+                    <a href="#" class="mt-3 text-xs text-center text-gold hover:text-white transition-colors uppercase tracking-widest font-light underline decoration-neutral-700 underline-offset-4">Descargar en alta resolución</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Música -->
+    <section id="musica" class="py-24 bg-darker border-y border-neutral-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-playfair text-4xl md:text-5xl text-gold mb-16 text-center italic">Música</h2>
+            
+            <div class="space-y-6">
+                <!-- Custom elegant minimalist audio player 1 -->
+                <div class="flex items-center space-x-4 md:space-x-6 bg-darkPanel p-4 md:p-6 border border-neutral-800 hover:border-gold transition-colors duration-300">
+                    <button data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" class="audio-play-btn w-12 h-12 flex-shrink-0 rounded-full border border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-colors duration-300">
+                        <svg class="play-icon w-4 h-4 ml-1 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <svg class="pause-icon w-4 h-4 hidden fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <div class="flex-1">
+                        <h4 class="font-playfair text-lg text-white mb-1">Ain't No Sunshine <span class="text-neutral-500 text-sm font-montserrat font-light">- Bill Withers Cover</span></h4>
+                        <div class="audio-progress-container w-full bg-neutral-800 h-[2px] mt-3 relative cursor-pointer py-2 -my-2 group">
+                            <div class="audio-progress-bar absolute top-1/2 -translate-y-1/2 left-0 bg-gold h-[2px] w-0"></div>
+                            <div class="audio-progress-knob absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full hidden group-hover:block transition-all"></div>
+                        </div>
+                    </div>
+                    <div class="audio-time hidden sm:block text-xs text-neutral-400 font-mono tracking-widest min-w-[100px] text-right">
+                        00:00 / 00:00
+                    </div>
+                </div>
+
+                <!-- Custom elegant minimalist audio player 2 -->
+                <div class="flex items-center space-x-4 md:space-x-6 bg-darkPanel p-4 md:p-6 border border-neutral-800 hover:border-gold transition-colors duration-300">
+                    <button data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" class="audio-play-btn w-12 h-12 flex-shrink-0 rounded-full border border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-colors duration-300">
+                        <svg class="play-icon w-4 h-4 ml-1 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <svg class="pause-icon w-4 h-4 hidden fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <div class="flex-1">
+                        <h4 class="font-playfair text-lg text-white mb-1">At Last <span class="text-neutral-500 text-sm font-montserrat font-light">- Etta James Cover</span></h4>
+                        <div class="audio-progress-container w-full bg-neutral-800 h-[2px] mt-3 relative cursor-pointer py-2 -my-2 group">
+                            <div class="audio-progress-bar absolute top-1/2 -translate-y-1/2 left-0 bg-gold h-[2px] w-0"></div>
+                            <div class="audio-progress-knob absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full hidden group-hover:block transition-all"></div>
+                        </div>
+                    </div>
+                    <div class="audio-time hidden sm:block text-xs text-neutral-400 font-mono tracking-widest min-w-[100px] text-right">
+                        00:00 / 00:00
+                    </div>
+                </div>
+
+                <!-- Custom elegant minimalist audio player 3 -->
+                <div class="flex items-center space-x-4 md:space-x-6 bg-darkPanel p-4 md:p-6 border border-neutral-800 hover:border-gold transition-colors duration-300">
+                    <button data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" class="audio-play-btn w-12 h-12 flex-shrink-0 rounded-full border border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-colors duration-300">
+                        <svg class="play-icon w-4 h-4 ml-1 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <svg class="pause-icon w-4 h-4 hidden fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <div class="flex-1">
+                        <h4 class="font-playfair text-lg text-white mb-1">Love on the Brain <span class="text-neutral-500 text-sm font-montserrat font-light">- Rihanna Cover</span></h4>
+                        <div class="audio-progress-container w-full bg-neutral-800 h-[2px] mt-3 relative cursor-pointer py-2 -my-2 group">
+                            <div class="audio-progress-bar absolute top-1/2 -translate-y-1/2 left-0 bg-gold h-[2px] w-0"></div>
+                            <div class="audio-progress-knob absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full hidden group-hover:block transition-all"></div>
+                        </div>
+                    </div>
+                    <div class="audio-time hidden sm:block text-xs text-neutral-400 font-mono tracking-widest min-w-[100px] text-right">
+                        00:00 / 00:00
+                    </div>
+                </div>
+
+                <!-- Custom elegant minimalist audio player 4 -->
+                <div class="flex items-center space-x-4 md:space-x-6 bg-darkPanel p-4 md:p-6 border border-neutral-800 hover:border-gold transition-colors duration-300">
+                    <button data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" class="audio-play-btn w-12 h-12 flex-shrink-0 rounded-full border border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-black transition-colors duration-300">
+                        <svg class="play-icon w-4 h-4 ml-1 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <svg class="pause-icon w-4 h-4 hidden fill-current" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+                    <div class="flex-1">
+                        <h4 class="font-playfair text-lg text-white mb-1">Seven Nation Army <span class="text-neutral-500 text-sm font-montserrat font-light">- Soul Rework</span></h4>
+                        <div class="audio-progress-container w-full bg-neutral-800 h-[2px] mt-3 relative cursor-pointer py-2 -my-2 group">
+                            <div class="audio-progress-bar absolute top-1/2 -translate-y-1/2 left-0 bg-gold h-[2px] w-0"></div>
+                            <div class="audio-progress-knob absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 w-3 h-3 bg-white rounded-full hidden group-hover:block transition-all"></div>
+                        </div>
+                    </div>
+                    <div class="audio-time hidden sm:block text-xs text-neutral-400 font-mono tracking-widest min-w-[100px] text-right">
+                        00:00 / 00:00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Tour -->
+    <section id="tour" class="py-24 bg-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-playfair text-4xl md:text-5xl text-gold mb-12 text-center italic">Tour</h2>
+            
+            <div class="overflow-x-auto bg-darkPanel border border-neutral-800 p-1">
+                <table class="w-full text-left border-collapse whitespace-nowrap">
+                    <thead>
+                        <tr class="border-b border-neutral-800 text-neutral-400 text-xs uppercase tracking-widest">
+                            <th class="p-4 font-normal">Fecha</th>
+                            <th class="p-4 font-normal">Sala / Recinto</th>
+                            <th class="p-4 font-normal">Ciudad</th>
+                            <th class="p-4 font-normal text-right">Entradas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tour-tbody" class="text-sm">
+                        <!-- Fetched data will populate here -->
+                        <tr>
+                            <td colspan="4" class="p-8 text-center text-neutral-500">Cargando fechas de tour...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contacto y Contratación -->
+    <section id="contacto" class="py-24 bg-darker">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl md:text-5xl text-gold mb-6 italic">Contacto y Contratación</h2>
+                <p class="text-neutral-400 text-lg max-w-2xl mx-auto font-light">
+                    Contratación para salas, eventos corporativos, fiestas o festivales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Left Column: Contact Info -->
+                <div class="flex flex-col justify-center space-y-10">
+                    
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Email</h4>
+                        <a href="mailto:booking@mollnoir.com" class="text-xl md:text-2xl text-white hover:text-gold transition-colors font-playfair">booking@mollnoir.com</a>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-neutral-500 mb-2">Teléfono</h4>
+                        <a href="tel:+34600000000" class="text-xl md:text-2xl text-white hover:text-gold transition-colors font-playfair">+34 600 000 000</a>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-neutral-500 mb-4">Redes Sociales</h4>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-neutral-400 hover:text-gold transition-colors">
+                                <span class="sr-only">Instagram</span>
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <a href="#" class="text-neutral-400 hover:text-gold transition-colors">
+                                <span class="sr-only">YouTube</span>
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="bg-darkPanel p-8 border border-neutral-800 shadow-2xl">
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Mensaje enviado. (Simulado)');">
+                        <div>
+                            <label for="nombre" class="block text-xs uppercase tracking-widest text-neutral-400 mb-2">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-none focus:ring-0">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs uppercase tracking-widest text-neutral-400 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-none focus:ring-0">
+                        </div>
+                        <div>
+                            <label for="mensaje" class="block text-xs uppercase tracking-widest text-neutral-400 mb-2">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required class="w-full px-4 py-3 rounded-none focus:ring-0 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-black font-medium uppercase tracking-widest text-sm py-4 transition-colors duration-300">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark border-t border-neutral-900 py-8 text-center text-neutral-500 text-sm">
+        <p>&copy; 2026 Moll Noir. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para Audio y Tour Data -->
+    <script>
+        // --- Lógica de Reproductores de Audio ---
+        const audioPlayers = document.querySelectorAll('.audio-play-btn');
+        let currentAudio = null;
+        let currentButton = null;
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "00:00";
+            const m = Math.floor(seconds / 60);
+            const s = Math.floor(seconds % 60);
+            return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        audioPlayers.forEach(btn => {
+            const container = btn.closest('.flex');
+            const progressBar = container.querySelector('.audio-progress-bar');
+            const progressKnob = container.querySelector('.audio-progress-knob');
+            const progressContainer = container.querySelector('.audio-progress-container');
+            const timeDisplay = container.querySelector('.audio-time');
+            const playIcon = btn.querySelector('.play-icon');
+            const pauseIcon = btn.querySelector('.pause-icon');
+            const src = btn.getAttribute('data-audio');
+            
+            const audio = new Audio(src);
+
+            audio.addEventListener('loadedmetadata', () => {
+                timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                const percent = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = `${percent}%`;
+                progressKnob.style.left = `${percent}%`;
+                timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            });
+
+            audio.addEventListener('ended', () => {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                progressBar.style.width = '0%';
+                progressKnob.style.left = '0%';
+                timeDisplay.textContent = `00:00 / ${formatTime(audio.duration)}`;
+                progressKnob.classList.add('hidden');
+                progressKnob.classList.remove('group-hover:block');
+            });
+
+            btn.addEventListener('click', () => {
+                // Pausar otro audio si está sonando
+                if (currentAudio && currentAudio !== audio) {
+                    currentAudio.pause();
+                    const prevPlayIcon = currentButton.querySelector('.play-icon');
+                    const prevPauseIcon = currentButton.querySelector('.pause-icon');
+                    const prevKnob = currentButton.closest('.flex').querySelector('.audio-progress-knob');
+                    prevPlayIcon.classList.remove('hidden');
+                    prevPauseIcon.classList.add('hidden');
+                    prevKnob.classList.add('hidden');
+                    prevKnob.classList.remove('group-hover:block');
+                }
+
+                if (audio.paused) {
+                    audio.play();
+                    playIcon.classList.add('hidden');
+                    pauseIcon.classList.remove('hidden');
+                    progressKnob.classList.remove('hidden');
+                    progressKnob.classList.add('group-hover:block');
+                    currentAudio = audio;
+                    currentButton = btn;
+                } else {
+                    audio.pause();
+                    playIcon.classList.remove('hidden');
+                    pauseIcon.classList.add('hidden');
+                }
+            });
+
+            progressContainer.addEventListener('click', (e) => {
+                if (audio.duration) {
+                    const rect = progressContainer.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    audio.currentTime = pos * audio.duration;
+                }
+            });
+        });
+
+        // --- Lógica de Tour Data ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const tableBody = document.getElementById('tour-tbody');
+            
+            // Intentamos cargar el archivo 'tour.txt'
+            fetch('tour.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Archivo no encontrado o error en la red.');
+                    }
+                    return response.text();
+                })
+                .catch(error => {
+                    console.info('No se encontró tour.txt, usando datos de respaldo (fallback).', error);
+                    // Mock data as fallback
+                    return `20/11/2026|Sala Clamores|Madrid|#
+25/11/2026|Razzmatazz 3|Barcelona|#
+02/12/2026|Kafe Antzokia|Bilbao|#
+10/12/2026|Teatro Barceló|Madrid|#
+15/12/2026|Sala X|Sevilla|#`;
+                })
+                .then(text => {
+                    const lines = text.trim().split('\n');
+                    tableBody.innerHTML = ''; // Clear loading message
+                    
+                    if (lines.length === 0 || lines[0] === '') {
+                        tableBody.innerHTML = '<tr><td colspan="4" class="p-8 text-center text-neutral-500">No hay fechas confirmadas actualmente.</td></tr>';
+                        return;
+                    }
+
+                    lines.forEach(line => {
+                        // Assuming format: Fecha|Sala|Ciudad|Enlace
+                        const parts = line.split('|');
+                        if (parts.length >= 3) {
+                            const fecha = parts[0].trim();
+                            const sala = parts[1].trim();
+                            const ciudad = parts[2].trim();
+                            const enlace = parts[3] ? parts[3].trim() : '#';
+                            
+                            const tr = document.createElement('tr');
+                            tr.className = 'border-b border-neutral-800 hover:bg-neutral-900/50 transition-colors';
+                            tr.innerHTML = `
+                                <td class="p-4 font-mono text-gold">${fecha}</td>
+                                <td class="p-4 text-white">${sala}</td>
+                                <td class="p-4 text-neutral-300">${ciudad}</td>
+                                <td class="p-4 text-right">
+                                    <a href="${enlace}" class="inline-block text-xs uppercase tracking-widest border border-gold text-gold px-4 py-2 hover:bg-gold hover:text-black transition-colors duration-300">
+                                        Entradas
+                                    </a>
+                                </td>
+                            `;
+                            tableBody.appendChild(tr);
+                        }
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
